@@ -3,6 +3,7 @@
 | Date    | Concepts                                                                    |
 | ------- | --------------------------------------------------------------------------- |
 | 28 July | Linked list in python                                                       |
+| 29 July | List initialisation                                                         |
 | 31 July | Balancing Paranthesis; Stack in python                                      |
 | 9  Sept | In-Order traversal of a binary search tree                                  |
 | 20 Sept | Anagram checking using XOR; ord() to convert character to its ASCII         |
@@ -14,7 +15,9 @@
 | 14 Nov  | dict in python; searching key in dict                                       |
 | 23 Dec  | making hashmap using python dict                                            |
 | 7 Jan   | reversing list using .reverse()                                             |
-| 17 Jan  | reversing string using `[::-1]`                                             |
+| 9 Jan   | heap in python                                                              |
+| 17 Jan  | reversing string using `[::-1]`; two's complement of a number               |
+| 20 Jan  | bit manipulation                                                            |
 
 
 * Files are named as `month.day.py` according to the date of the problem being posted

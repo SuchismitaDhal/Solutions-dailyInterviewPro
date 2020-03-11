@@ -1,6 +1,6 @@
 # APPLE
 """
-    SOLVED -- TO BE TESTED
+    SOLVED -- LEETCODE#1002 (SIMILAR)
     Given a list of strings, find the list of characters that appear in all strings.
 """
 
