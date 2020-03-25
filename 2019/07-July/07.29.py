@@ -12,7 +12,7 @@ class Solution:
 
     def lengthOfLongestSubstring(self, s):
         # Time: O(n) each character is traversed at most twice
-        #Space: O(1)
+        # Space: O(1)
         v = [-1] * 26
         n = len(s)
         i = 0

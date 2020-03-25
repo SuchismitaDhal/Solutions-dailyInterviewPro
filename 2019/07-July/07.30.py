@@ -1,5 +1,6 @@
 # TWITTER
 """
+    SOLVED -- LEETCODE#5
     A palindrome is a sequence of characters that reads the same backwards and forwards.
     Given a string, s, 
     find the longest palindromic substring in s.
@@ -11,31 +12,40 @@
     Input: "million"
     Output: "illi"
 """
+import math
 
 
 class Solution:
     def longestPalindrome(self, s):
         n = len(s)
-        l = [1] * n
+        if n < 2:
+            return s
+        str = []
+        l, r = 0, 0
 
-        for i in range(1, n):
-            m = i - l[i - 1] - 1
-            if m > 0 and s[i] == s[m]:
-                l[i] = l[i - 1] + 2
-            else:
-                if i >= 2 and s[i] == s[i - 2]:
-                    l[i] = 3
+        for i in range(n - 1):
+            str.append(s[i])
+            str.append('.')
+        str.append(s[n - 1])
+
+        for i in range(1, 2 * n - 2):
+            k = 1
+            while i - k >= 0 and i + k < 2 * n - 1:
+                if str[i - k] == str[i + k]:
+                    k += 1
                 else:
-                    if s[i] == s[i - 1]:
-                        l[i] = 2
-        print(l)
+                    k -= 1
+                    break
 
-        p = 0
-        for i in range(1, n):
-            if l[i] > l[p]:
-                p = i
+            k -= 1
+            if 2 * k + 1 > r - l + 1:
+                r = i + k
+                l = i - k
 
-        return s[p - l[p] + 1: p + 1]
+        l = math.ceil(l / 2)
+        r = math.floor(r / 2)
+
+        return s[l:r+1]
 
 
 s = "tracecars"
