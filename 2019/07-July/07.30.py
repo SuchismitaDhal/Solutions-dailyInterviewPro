@@ -17,6 +17,7 @@ import math
 
 class Solution:
     def longestPalindrome(self, s):
+        # Time: O(n^2)   Space: O(1)
         n = len(s)
         if n < 2:
             return s
