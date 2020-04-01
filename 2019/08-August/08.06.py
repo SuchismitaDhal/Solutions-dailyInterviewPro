@@ -1,5 +1,6 @@
 # MICROSOFT
 """
+    SOLVED -- LEETCODE#665
     You are given an array of integers in an arbitrary order. 
     Return whether or not it is possible to make the array non-decreasing 
     by modifying at most 1 element to any value.
@@ -16,33 +17,28 @@
 
 
 def check(lst):
-    flag = False
+    # Time: O(n)     Space: O(1)
+    d = 0
+    f = 0
     n = len(lst)
 
-    if lst[0] > lst[1]:
-        if flag == True:
-            return False
-        else:
-            lst[0] = lst[1]
-            flag = True
+    for i in range(n-1):
+        if lst[i] > lst[i + 1]:
+            d += 1
+            if d == 1:
+                f = i
 
-    for i in range(1, n-1):
-        if lst[i] < lst[i - 1]:
-            if flag == True:
-                return False
-            else:
-                if lst[i - 1] > lst[i + 1]:
-                    return False
-                else:
-                    flag = True
+    if d == 0:
+        return True
+    if d > 1:
+        return False
 
-    if lst[n-2] > lst[n-1]:
-        if flag == True:
-            return False
-        else:
-            flag = True
+    # d = 1
+    s = f + 1
+    if f == 0 or s == n - 1:
+        return True
 
-    return True
+    return lst[f-1] <= lst[f+1] or lst[s-1] <= lst[s+1]
 
 
 print(check([13, 4, 7]))
