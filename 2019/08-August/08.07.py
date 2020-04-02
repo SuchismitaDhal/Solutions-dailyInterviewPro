@@ -16,6 +16,7 @@ class Node:
 
 
 def findCeilingFloor(root, k, floor=None, ceil=None):
+    # Time: O(logn)  Space: O(logn)
     if root.value == k:
         return (k, k)
 
