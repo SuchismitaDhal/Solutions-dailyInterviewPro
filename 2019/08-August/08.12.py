@@ -12,6 +12,8 @@ def distance(s1, s2):
     l1 = len(s1)
     l2 = len(s2)
 
+    if
+
 
 print(distance('biting', 'sitting'))
 # 2
