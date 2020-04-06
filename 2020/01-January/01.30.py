@@ -1,5 +1,6 @@
-#AMAZON
+# AMAZON
 """
+    SOLVED -- LEETCODE#12
     Given an integer, convert the integer to a roman numeral. 
     You can assume the input will be between 1 to 3999.
     The rules for roman numerals are as following:
@@ -27,8 +28,26 @@
     To represent 900, we should use CM instead of DCCCC.
 """
 
+
 def integer_to_roman(num):
-  # Fill this in.
+    value = [
+        [1000, "M"],
+        [900, "CM"],  [500, "D"], [400, "CD"],  [100, "C"],
+        [90, "XC"], [50, "L"],  [40, "XL"], [10, "X"],
+        [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]
+    ]
+
+    sol = ""
+    i = 0
+    while num:
+        if num - value[i][0] >= 0:
+            sol += value[i][1]
+            num -= value[i][0]
+        else:
+            i += 1
+
+    return sol
+
 
 print(integer_to_roman(1000))
 # M
