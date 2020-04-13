@@ -1,5 +1,6 @@
-#APPLE
+# APPLE
 """
+    SOLVED
     Given a sorted list of size n, with m unique elements (thus m < n), 
     modify the list such that the first m unique elements in the list will be sorted, 
     ignoring the rest of the list. Your solution should have a space complexity of O(1). 
@@ -7,9 +8,23 @@
     you should return what m is.
 """
 
+
 def remove_dups(nums):
-    # Fill this in.
-    return
+    # Time: O(n)    Space: O(1)
+    n = len(nums)
+    if n == 1:
+        return 1
+    p = 1
+
+    for i in range(1, n):
+        if nums[i] > nums[p-1]:
+            nums[i], nums[p] = nums[p], nums[i]
+            p += 1
+
+    # nums = nums[:p] does not work
+    del nums[p:n]
+    return p
+
 
 nums = [1, 1, 2, 3, 4, 4, 4, 4, 4, 5, 5, 6, 7, 9]
 print(remove_dups(nums))

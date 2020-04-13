@@ -13,7 +13,6 @@ class Node:
 
 
 def min_depth_bst(root):
-    # Fill this in.
 
 
 n3 = Node(3, None, Node(4))
