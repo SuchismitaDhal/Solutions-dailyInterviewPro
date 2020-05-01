@@ -22,6 +22,7 @@ class Node:
 
 
 def remove_kth_from_linked_list(head, k):
+    # Time: O(n)     Space: O(1)
     c = 1
     fwd = head
     bck = None
