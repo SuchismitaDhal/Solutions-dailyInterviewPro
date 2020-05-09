@@ -1,5 +1,6 @@
 # AIRBNB
 """
+    SOLVED -- LEETCODE#61
     Given a linked list and a number k, rotate the linked list by k places.
 """
 
@@ -19,8 +20,26 @@ class Node:
 
 
 def rotate_list(list, k):
-    # Fill this in.
+    # Time: O(n)     Space: O(1)
+    head = list
+    if head == None or head.next == None:
+        return head
 
+    tail = head
+    n = 1
+    while tail.next != None:
+        n += 1
+        tail = tail.next
+
+    k = k % n
+    for i in range(k):
+        temp = head
+        head = head.next
+        temp.next = None
+        tail.next = temp
+        tail = tail.next
+
+    return head
 
     # Order is 1, 2, 3, 4
 llist = Node(1, Node(2, Node(3, Node(4))))
