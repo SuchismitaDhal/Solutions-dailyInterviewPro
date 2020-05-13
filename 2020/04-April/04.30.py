@@ -13,7 +13,12 @@
 
 class Solution(object):
     def topKFrequent(self, words, k):
-      # Fill this in.
+        occ = dict()
+        for word in words:
+            if word in occ:
+                occ[word] += 1
+            else:
+                occ[word] = 1
 
 
 words = ["daily", "interview", "pro", "pro", "for", "daily", "pro", "problems"]
