@@ -20,7 +20,14 @@
 | 17 Jan  | reversing string using `[::-1]`; two's complement of a number               |
 | 20 Jan  | bit manipulation                                                            |
 | 3 Feb   | deleting sublist from a list                                                |
+| 12 May  | list of lambda; type of datatype                                            |
+| 14 May  | defaultdict                                                                 |
+| 16 May  | implemening queue in python                                                 |
 
 
+## Not yet solved
+- [ ] 2020/05-May/05.14.py
+
+## Note
 * Files are named as `month.day.py` according to the date of the problem being posted
 * Solutions are written in python3
