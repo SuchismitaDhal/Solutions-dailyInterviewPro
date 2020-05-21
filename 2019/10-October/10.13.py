@@ -1,5 +1,6 @@
 # APPLE
 """
+    SOLVED -- LEETCODE#136
     Given an array of integers, arr, 
     where all numbers occur twice except one number which occurs once, 
     find the number. 
@@ -12,7 +13,11 @@
 
 class Solution(object):
     def findSingle(self, nums):
-      # Fill this in.
+        # Time: O(n)  Space: O(1)
+        sol = 0
+        for x in nums:
+            sol = sol ^ x
+        return sol
 
 
 nums = [1, 1, 3, 4, 4, 5, 6, 5, 6]
