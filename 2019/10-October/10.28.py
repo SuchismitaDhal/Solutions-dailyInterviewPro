@@ -1,5 +1,6 @@
 # TWITTER
 """
+    SOLVED -- NOT FOUND
     Given an array of integers of size n, where all elements are between 1 and n inclusive, 
     find all of the elements of [1, n] that do not appear in the array. 
     Some numbers may appear more than once.
@@ -11,7 +12,19 @@
 
 class Solution(object):
     def findDisappearedNumbers(self, nums):
-      # Fill this in.
+        # Time: O(n)   Space: O(n)
+        n = len(nums)
+        sol = []
+        hsh = [False for i in range(n)]
+
+        for num in nums:
+            hsh[num - 1] = True
+
+        for i in range(n):
+            if hsh[i] == False:
+                sol.append(i + 1)
+
+        return sol
 
 
 nums = [4, 6, 2, 6, 7, 2, 1]
