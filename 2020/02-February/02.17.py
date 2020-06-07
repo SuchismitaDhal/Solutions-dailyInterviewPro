@@ -1,5 +1,6 @@
 # FACEBOOK
 """ 
+    SOLVED -- LEETCODE#78
     Given a list of unique numbers, 
     generate all possible subsets without duplicates. 
     This includes the empty set as well.
@@ -7,8 +8,15 @@
 
 
 def generateAllSubsets(nums):
-    # Fill this in.
-    return
+    # Time: O(n*2^n)  Space: O(1) no *extra* space
+    sol = [[]]
+    for num in nums:
+        idx = len(sol)
+        for i in range(idx):
+            new = sol[i] + [num]
+            sol.append(new)
+
+    return sol
 
 
 print(generateAllSubsets([1, 2, 3]))

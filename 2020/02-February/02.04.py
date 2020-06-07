@@ -7,7 +7,19 @@
 
 
 def sum_combinations(nums, target):
-  # Fill this in.
+    # Time: O(2^n)  Space: O(n^2)
+    # assuming non-zero numbers
+    sol = set()
+    if target == 0:
+        return [[]]
+    for i in range(len(nums)):
+        if nums[i] <= target:
+            suff = sum_combinations(nums[i + 1:], target - nums[i])
+            for s in suff:
+                s.append(nums[i])
+                sol.add(s)
+
+    return sol
 
 
 print(sum_combinations([10, 1, 2, 7, 6, 1, 5], 8))
