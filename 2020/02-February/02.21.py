@@ -1,6 +1,8 @@
 # MICROSOFT
 """
-    Given a node in a connected directional graph, create a copy of it.
+    SOLVED -- LEETCODE#133
+    Given a node in a connected directional graph, 
+    create a copy of it.
 """
 
 
@@ -29,7 +31,20 @@ class Node:
 
 
 def deep_copy_graph(graph_node, visited=None):
-    # Fill this in.
+    # Time: O(n+e)  dfs     Space: O(n)
+    if visited == None:
+        visited = {}
+
+    if graph_node in visited:
+        return visited[graph_node]
+    else:
+        node_copy = Node(graph_node.value)
+        visited[graph_node] = node_copy
+        for nbr in graph_node.adj:
+            node_copy.adj.append(
+                deep_copy_graph(nbr, visited)
+            )
+        return node_copy
 
 
 n5 = Node(5)

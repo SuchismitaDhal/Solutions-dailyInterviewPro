@@ -23,7 +23,7 @@
 | 12 May  | list of lambda; type of datatype                                            |
 | 14 May  | defaultdict                                                                 |
 | 16 May  | implemening queue in python                                                 |
-| 6 June  | string to list and list to string                                           |
+| 11 June | list to string                                                              |
 
 ## Not yet solved
 - [ ] 2020/02-February/02.04.py
