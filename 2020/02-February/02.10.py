@@ -1,6 +1,6 @@
 # GOOGLE
 """
-    SOLVED 
+    SOLVED -- LEETCODE#191
     Given an integer, find the number of 1 bits it has.
 """
 

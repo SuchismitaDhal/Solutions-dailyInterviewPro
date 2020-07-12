@@ -10,7 +10,9 @@
 
 
 def schedule_tasks(tasks, n):
-  # Fill this in.
+    freq = [0] * 26
+    sol = 0
+    return sol
 
 
 print(schedule_tasks(['q', 'q', 's', 'q', 'w', 'w'], 4))
