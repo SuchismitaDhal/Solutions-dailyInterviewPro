@@ -13,8 +13,11 @@
 
 
 class Solution(object):
-    def comp(x):
+    def comp(self, x):
         return x
+
+    def add(self):
+        return
 
     def topKFrequent(self, words, k):
         bckt = dict()
