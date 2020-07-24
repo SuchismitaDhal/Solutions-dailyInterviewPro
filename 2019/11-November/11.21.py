@@ -1,5 +1,6 @@
 # MICROSOFT
 """
+    SOLVED -- LEETCODE#393
     A UTF-8 character encoding is a variable width character encoding 
     that can vary from 1 to 4 bytes depending on the character. 
     The structure of the encoding is as follows:
@@ -33,18 +34,20 @@ BYTE_EQUAL = [
 ]
 
 
+def check_util(byte):
+    return byte & BYTE_EQUAL[2] == BYTE_MASKS[1]
+
+
 def utf8_validator(bytes):
     # Time: O(n)   Space: O(1)
     n = len(bytes)
-    for i in range(1, n):
-        bytes[i] = int(str(bytes[i]), 2)
-     k = 0
-     f = False
-     for x in bytes:
-         if 
-         if k == 0:
-            for i in range(1, 5):
-                
+    if bytes[0] & BYTE_MASKS[n] == BYTE_EQUAL[n]:
+        for i in range(1, n):
+            if not check_util(bytes[i]):
+                return False
+        return True
+    else:
+        return False
 
 
 print(utf8_validator([0b00000000]))
@@ -53,3 +56,4 @@ print(utf8_validator([0b00000000, 10000000]))
 # False
 print(utf8_validator([0b11000000, 10000000]))
 # True
+print(utf8_validator([197, 130, 1]))
