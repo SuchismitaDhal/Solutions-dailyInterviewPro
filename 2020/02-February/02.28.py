@@ -1,5 +1,6 @@
 # APPLE
 """
+    SOLVED -- LEETCODE#102
     You are given a tree, and your job is to print it level-by-level with linebreaks.
         a
        / \
@@ -7,7 +8,6 @@
      / \ / \
     d  e f  g
     The output should be
-
     a
     bc
     defg
@@ -24,6 +24,24 @@ class Node(object):
 
     def __str__(self):
         # Fill this in.
+        Q = deque()
+        sol = ""
+        Q.append(self)
+        Q.append(Node('.'))
+
+        while len(Q) > 1:
+            curr = Q.popleft()
+            if curr.val == '.':
+                sol += '\n'
+                Q.append(curr)
+            else:
+                sol += curr.val
+                if curr.left:
+                    Q.append(curr.left)
+                if curr.right:
+                    Q.append(curr.right)
+
+        return sol
 
 
 tree = Node('a')
