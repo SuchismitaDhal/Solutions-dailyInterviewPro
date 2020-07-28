@@ -1,6 +1,6 @@
 # TWITTER
 """
-    SOLVED
+    SOLVED -- NO SIMILAR QUESTION FOUND
     Given a 32-bit integer, swap the 1st and 2nd bit, 3rd and 4th bit, up til the 31st and 32nd bit.
 """
 swap = [0, 2, 1, 3]
