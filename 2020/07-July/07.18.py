@@ -1,6 +1,6 @@
 # APPLE
 """
-    SOLVED -- TO BE TESTED
+    SOLVED -- LEETCODE#297
     You are given the root of a binary tree. 
     You need to implement 2 functions:
         1. serialize(root) which serializes the tree into a string representation
@@ -45,7 +45,7 @@ def deserializeutil(data, i):
 
 
 def deserialize(data):
-    data = data.replace(' ', '')
+    data = data.split(' ')
     return deserializeutil(data, -1)[0]
 
 

@@ -1,6 +1,6 @@
 # TWITTER
 """
-
+    SOLVED -- LEETCODE#82
     Given a linked list, remove all duplicate values from the linked list.
     For instance, given 1 -> 2 -> 3 -> 3 -> 4, 
     then we wish to return the linked list 1 -> 2 -> 4.
@@ -20,23 +20,34 @@ class Node(object):
 
 class Solution(object):
     def deleteDuplicates(self, node):
-        seen = set()
-        if node == None or node.next == None:
-            return node
-        sol = node
-        ptr = sol
-        curr = node.next
-        sol.next = None
+        sol = Node('.')
+        last = sol
+        prev = None
+        ptr = node
 
-        seen.add(prev.val)
-        while curr:
-            if curr.val in seen:
-                temp = curr
-                curr = curr.next
+        while ptr:
+            if not ptr.next or ptr.next.val != ptr.val:
+                if prev != ptr.val:
+                    last.next = ptr
+                    prev = ptr.val
+                    ptr = ptr.next
+                    last = last.next
+                    last.next = None
+                else:
+                    temp = ptr
+                    prev = ptr.val
+                    ptr = ptr.next
+                    temp.next = None
+                    del temp
+
+            else:
+                prev = ptr.val
+                temp = ptr
+                ptr = ptr.next
                 temp.next = None
                 del temp
-            else:
-                return
+
+        node = sol.next
 
 
 n = Node(1, Node(2, Node(3, Node(3, Node(4)))))
