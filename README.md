@@ -20,6 +20,7 @@
 | 17 Jan  | reversing string using `[::-1]`; two's complement of a number               |
 | 20 Jan  | bit manipulation                                                            |
 | 3 Feb   | deleting sublist from a list                                                |
+| 9 March | static variables                                                            |
 | 12 May  | list of lambda; type of datatype                                            |
 | 14 May  | defaultdict                                                                 |
 | 16 May  | implemening queue in python                                                 |
@@ -32,4 +33,4 @@
 ## Note
 * Files are named as `month.day.py` according to the date of the problem being posted
 * Solutions are written in python3
-* Completely solved till 2020/08-August/08.10.py
+* Completely solved till 2019/08-August/08.10.py
