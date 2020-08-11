@@ -31,7 +31,10 @@ def is_palindrome_util(node, l):
 
 def is_palindrome(node):
     # For singly linked list
-    # Time: O(n)    Space: O(n)
+    # Time: O(n)
+    # Space: O(n), can be optimised to O(1)
+    # if we reverse only the second half of
+    # the linked list inplace and restore it
     l = 0
     ptr = node
     while ptr != None:
