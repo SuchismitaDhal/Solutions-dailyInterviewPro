@@ -1,6 +1,6 @@
 # AIRBNB
 """
-    SOLVED
+    SOLVED -- LEETCODE#119
     Pascal's Triangle is a triangle where all numbers are the sum of the 
     two numbers above it. Here's an example of the Pascal's Triangle of size 5.
         1
@@ -25,5 +25,5 @@ def pascal_triangle_row(n):
     return sol
 
 
-print(pascal_triangle_row(15))
+print(pascal_triangle_row(5))
 # [1, 5, 10, 10, 5, 1]

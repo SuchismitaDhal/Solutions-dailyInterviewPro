@@ -7,9 +7,41 @@
 """
 
 
+def getpi(patt):
+    pi = [[x, 0] for x in '.' + patt]
+
+    for i in range(2, len(pi)):
+        if pi[i][0] == pi[pi[i - 1][1] + 1][0]:
+            pi[i][1] = pi[i - 1][1] + 1
+    # print(pi)
+    return pi
+
+
+def kmp(str, pi):
+    i, j = 0, 0
+    while i < len(str):
+        print(i, j)
+        print(str[i], pi[j + 1][0])
+        if str[i] == pi[j + 1][0]:
+            i += 1
+            j += 1
+            if j == len(pi) - 1:
+                print('found@', i)
+                return True
+        else:
+            if j == 0:
+                i += 1
+            else:
+                j = pi[j][1]
+    return False
+
+
 def is_shifted(a, b):
-  # Fill this in.
+    return kmp(a + a, getpi(b))
 
 
-print is_shifted('abcde', 'cdeab')
+# print(is_shifted('abcde', 'cdeab'))
 # True
+print(is_shifted("vcuszhlbtpmksjleuchmjffufrwpiddgyynfujnqblngzoogzg",
+                 "fufrwpiddgyynfujnqblngzoogzgvcuszhlbtpmksjleuchmjf"
+                 ))
