@@ -1,5 +1,6 @@
 # AMAZON
 """
+    SOLVED -- LEETCODE#209
     Given an array of n positive integers and a positive integer s, 
     find the minimal length of a contiguous subarray of which the sum ≥ s. 
     If there isn't one, return 0 instead.
@@ -12,8 +13,29 @@
 
 class Solution:
     def minSubArrayLen(self, nums, s):
-        # Fill this in
-        return
+        # Time: O(n)    Space: O(1)
+        sum = 0
+        for i in range(len(nums)):
+            sum += nums[i]
+            if sum >= s:
+                break
+        if sum < s:
+            return 0
+        j = i
+        i = 0
+
+        while 1:
+            if sum - nums[i] >= s:
+                sum -= nums[i]
+                i += 1
+            else:
+                if j+1 == len(nums):
+                    break
+                sum += nums[j+1] - nums[i]
+                j += 1
+                i += 1
+
+        return j - i + 1
 
 
 print(Solution().minSubArrayLen([2, 3, 1, 2, 4, 3], 7))
