@@ -1,5 +1,6 @@
 # GOOGLE
 """
+    SOLVED -- LEETCODE#210
     You are given a hash table where the key is a course code, 
     and the value is a list of all the course codes that are prerequisites for the key. 
     Return a valid ordering in which we can complete the courses. 
@@ -13,28 +14,34 @@
     This input should return the order that we need to take these courses:
     ['CSC100', 'CSC200', 'CSCS300']
 """
-from collections import deque
+
+
+def visit(c, visiting, visited, order, preq):
+    visiting.add(c)
+    for x in preq[c]:
+        if x in visiting:
+            return False
+        if x not in visited:
+            if not visit(x, visiting, visited, order, preq):
+                return False
+    visiting.remove(c)
+    order.append(c)
+    visited.add(c)
+    return True
 
 
 def courses_to_take(course_to_prereqs):
-    # Fill this in.
+    # Time: O(n)    Space: O(n)
     order = []
     visited = set()
-    Q = deque()
+    visiting = set()
 
     for c in course_to_prereqs:
         if c not in visited:
-            Q.append(c)
-            while Q:
-                for pre in course_to_prereqs[Q[0]]:
-                    if pre in visited:
-                        return None
-                    Q.append(pre)
-                order.append(Q[0])
-                visited.add(Q[0])
-                Q.popleft()
+            if not visit(c, visiting, visited, order, course_to_prereqs):
+                return None
 
-    return order[::-1]
+    return order
 
 
 courses = {
