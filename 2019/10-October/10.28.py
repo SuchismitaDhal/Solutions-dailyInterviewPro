@@ -1,6 +1,6 @@
 # TWITTER
 """
-    SOLVED -- NO SIMILAR QUESTION FOUND
+    SOLVED -- NO SIMILAR PROBLEM FOUND
     Given an array of integers of size n, where all elements are between 1 and n inclusive, 
     find all of the elements of [1, n] that do not appear in the array. 
     Some numbers may appear more than once.

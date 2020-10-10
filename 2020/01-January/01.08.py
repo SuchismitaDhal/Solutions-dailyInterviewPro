@@ -1,6 +1,6 @@
 # TWITTER
 """
-    SOLVED -- NO SIMILAR QUESTION FOUND
+    SOLVED -- NO SIMILAR PROBLEM FOUND
     Given a binary search tree (BST) and a value s, 
     split the BST into 2 trees, where one tree has all values less than or equal to s, 
     and the other tree has all values greater than s 

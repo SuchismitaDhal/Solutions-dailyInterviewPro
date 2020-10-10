@@ -1,6 +1,6 @@
 # AMAZON
 """
-    SOLVED -- NO SIMILAR PROBLEM
+    SOLVED -- NO SIMILAR PROBLEM FOUND
     Given a binary tree, return all values given a certain height h.
 """
 from collections import deque

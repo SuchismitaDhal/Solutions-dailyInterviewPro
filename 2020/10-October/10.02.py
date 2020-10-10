@@ -1,6 +1,6 @@
 # AMAZON
 """
-    SOLVED -- NO SIMILAR QUESTION
+    SOLVED -- NO SIMILAR PROBLEM FOUND
     You are given a 2D array of characters, and a target string.
     Return whether or not the word target word exists in the matrix.
     Unlike a standard word search, the word must be either going left-to-right,
