@@ -1,6 +1,6 @@
 # FACEBOOK
 """
-    SOLVED
+    SOLVED -- LEETCODE#98
     You are given the root of a binary search tree.
     Return true if it is a valid binary search tree, and false otherwise.
     Recall that a binary search tree has the property that all values in the left subtree are less
@@ -18,7 +18,7 @@ class TreeNode:
 
 def is_bst(root):
     # Since, inorder traversal of bst is ordered
-    # O(n)
+    # Time:  O(n)   Space: O(n)
     stack = list()
     order = list()
 
@@ -29,7 +29,7 @@ def is_bst(root):
     while len(stack):
         n = stack[len(stack)-1]
         if n.left == None:
-            if len(order) > 0 and n.val <= order[-1]:
+            if len(order) > 0 and n.key <= order[-1]:
                 return False
             order.append(n.key)
             stack.pop()
