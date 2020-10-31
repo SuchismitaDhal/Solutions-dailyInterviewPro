@@ -1,5 +1,6 @@
 # LINKEDIN
 """
+    SOLVED -- LEETCODE#108
     Given a sorted list of numbers, change it into a balanced binary search tree.
     You can assume there will be no duplicate numbers in the list.
 """
@@ -28,16 +29,15 @@ class Node:
 
 
 def createBalancedBST(nums):
-    # Fill this in.
+    # Time: O(n)    Space: O(logn)
     n = len(nums)
-    nodes = []
-    for i in range(n):
-        if i % 2 != 0:
-            k = min(n - i - 1, i)
-            k = int((k + 1) / 2)
-            nodes.append(Node(nums[i], nums[i - k], nums[i + k]))
+    if n == 0: return None
+    mid = n//2
 
-    return nodes.__str__()
+    left = createBalancedBST(nums[:mid])
+    right = createBalancedBST(nums[mid+1:])
+
+    return Node(nums[mid], left, right)
 
 
 print(createBalancedBST([1, 2, 3, 4, 5, 6, 7]))
