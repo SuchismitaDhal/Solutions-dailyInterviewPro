@@ -1,5 +1,6 @@
 # UBER
 """
+    SOLVED -- LEETCODE#42
     You have a landscape, in which puddles can form.
     You are given an array of non-negative integers representing the elevation at each location.
     Return the amount of water that would accumulate if it rains.
@@ -13,8 +14,24 @@
 """
 
 def capacity(arr):
-  # Fill this in.
-  return "yolo"
+    n = len(arr)
+    if n == 0: return 0
+    leftHigh = [0 for _ in range(n)]  
+    rightHigh = [0 for _ in range(n)]
+    
+    leftHigh[0] = arr[0]
+    for i in range(1, n):
+        leftHigh[i] = max(leftHigh[i-1], arr[i])
+
+    rightHigh[n-1] = arr[n-1]
+    for i in range(n-2, -1, -1):
+        rightHigh[i] = max(rightHigh[i+1], arr[i])
+
+    sol = 0
+    for i in range(n):
+        sol += max(0, min(leftHigh[i], rightHigh[i]) - arr[i])
+
+    return sol
 
 print(capacity([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
 # 6
