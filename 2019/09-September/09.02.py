@@ -1,6 +1,6 @@
 # TWITTER
 """
-    SOLVED
+    SOLVED -- LEETCODE#53
     You are given an array of integers.
     Find the maximum sum of all possible contiguous subarrays of the array.
 
@@ -12,30 +12,21 @@
 
 
 def max_subarray_sum(arr):
+    # Space: O(n)   Time: O(1)
+    if len(arr) == 1:
+        return arr[0]
+        
     n = len(arr)
-    mxsum = 0
-    sum = 0
-    r = 0
-
-    # maxsum if starting at 0
-    for i in range(n):
-        sum += arr[i]
-        if (sum > mxsum):
-            mxsum = sum
-            r = i
-
-    sum = mxsum
-    for i in range(r):
-        sum -= arr[i]
-        if (sum > mxsum):
-            mxsum = sum
-
-    return mxsum
+    sol = arr[0]
+    maxsumtillnow = sol
+        
+    for i in range(1, n):
+        maxsumtillnow = max(maxsumtillnow + arr[i], arr[i])
+        sol = max(maxsumtillnow, sol)
+        
+    return sol
 
 
 print(max_subarray_sum([34, -50, 42, 14, -5, 86]))
 # 137
 
-"""
-    can also be solved with optimization of Kadane’s Algorithm
-"""
