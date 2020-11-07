@@ -12,6 +12,7 @@
 | 29 Sept | Post-Order traversal of a binary tree; Implementing switch using dictionary |
 | 2 Oct   | sort and for-loop                                                           |
 | 21 Oct  | set in python                                                               |
+| 25 Oct  | kmp algorithm                                                               |
 | 1 Nov   | initialising 2D array                                                       |
 | 14 Nov  | dict in python; searching key in dict                                       |
 | 23 Dec  | making hashmap using python dict                                            |

@@ -1,5 +1,6 @@
 # AIRBNB
 """
+    SOLVED -- https://www.careercup.com/question?id=5675602320293888
     We have a list of tasks to perform, with a cooldown period. 
     We can do multiple of these at the same time, but we cannot run the same task simultaneously.
     Given a list of tasks, find how long it will take to complete the tasks in the order they are input.
