@@ -1,5 +1,6 @@
 # TWITTER
 """
+    SOLVED -- LEETCODE#581
     Given a list of integers, return the bounds of the minimum range that must be sorted
     so that the whole list would be sorted.
     Example:
