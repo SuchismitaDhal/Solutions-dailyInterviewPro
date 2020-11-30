@@ -35,3 +35,4 @@
 * Files are named as `month.day.py` according to the date of the problem being posted
 * Solutions are written in python3
 * Completely solved till 2019/08-August/08.10.py
+* Formatting template at 2019/09-September/09.27.py

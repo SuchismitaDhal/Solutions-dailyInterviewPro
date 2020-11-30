@@ -1,6 +1,6 @@
 # TWITTER
 """
-    SOLVED
+    SOLVED -- NO SIMILAR PROBLEM FOUND
     You are the manager of a number of employees who all sit in a row. 
     The CEO would like to give bonuses to all of your employees, but since 
     the company did not perform so well this year the CEO would like to keep the bonuses to a minimum.

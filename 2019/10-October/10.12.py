@@ -10,23 +10,21 @@
 
     Given a number n, print the n-th Fibonacci Number.
 """
-# taking maximum value of n as 30
-MAXN = 30
-
 
 class Solution():
     def fibonacci(self, n):
-        # time : O(n), space : O(n)
+        # time : O(n), space : O(1)
         if n == 0:
             return 0
         if n == 1:
             return 1
-        fib = list()
-        fib.append(0)
-        fib.append(1)
+        
+        fibb1, fibb2 = 0, 1
         for i in range(2, n + 1):
-            fib.append(fib[i - 1] + fib[i - 2])
-        return fib[n]
+            next = fibb1 + fibb2
+            fibb1 = fibb2
+            fibb2 = next
+        return fibb2
 
 
 n = 9
