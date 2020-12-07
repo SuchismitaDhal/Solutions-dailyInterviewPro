@@ -14,5 +14,5 @@ def findSmallest(nums):
   # Fill this in.
 
 
-print findSmallest([1, 2, 3, 8, 9, 10])
+print (findSmallest([1, 2, 3, 8, 9, 10]))
 # 7

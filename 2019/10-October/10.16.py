@@ -8,10 +8,14 @@
     Output: cbcbca
 """
 
-
 def rearrangeString(s):
-  # Fill this in.
+    freq = collections.defaultdict(int)
+    for c in s:
+      freq[c] += 1
+
+    orderedfreq = [ (freq[x], c) for x in freq]
+    orderedfreq.sort()
 
 
-print rearrangeString('abbccc')
+print (rearrangeString('abbccc'))
 # cbcabc
