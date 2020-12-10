@@ -1,7 +1,6 @@
 # AMAZON
 """
     SOLVED -- LEETCODE#340
-    [VALIDATED] https://leetcode.com/discuss/interview-question/332807/Uber-or-Phone-screen-or-Longest-substring-with-at-most-K-distinct-characters/304809
     You are given a string s, and an integer k. 
     Return the length of the longest substring in s that contains at most k distinct characters.
 
@@ -13,10 +12,14 @@
 
 
 def longest_substring_with_k_distinct_characters(s, k):
+    if k == 0:
+        return 0
+        
     hash = dict()
     sz = 0
-    l = 0
-    for r in range(len(s)):
+    l = r = 0
+    sol = 0
+    while r < len(s):
         if sz > k:
             if hash[s[l]] == 1:
                 del hash[s[l]]
@@ -24,14 +27,17 @@ def longest_substring_with_k_distinct_characters(s, k):
             else:
                 hash[s[l]] -= 1
             l += 1
-        if s[r] in hash:
-            hash[s[r]] += 1
         else:
-            hash[s[r]] = 1
-            sz += 1
-
-    return r - l + 1
-
+            sol = max(sol, r - l)
+            if s[r] in hash:
+                hash[s[r]] += 1
+            else:
+                hash[s[r]] = 1
+                sz += 1
+            r += 1
+    
+    if sz <= k: sol = max(sol, r - l)                    
+    return sol
 
 print(longest_substring_with_k_distinct_characters('aabcdefff', 3))
 # 5 (because 'defff' has length 5 with 3 characters)

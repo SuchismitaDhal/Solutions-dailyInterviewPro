@@ -15,6 +15,8 @@
 """
 
 def remove_outermost_parenthesis(s):
+    # Time: O(n)    
+    # Space: O(n), can be converted to O(1) if string is mutable
     sol = []
     rank = 0
     for i in range(len(s)):
