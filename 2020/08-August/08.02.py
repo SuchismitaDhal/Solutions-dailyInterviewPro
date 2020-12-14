@@ -12,6 +12,7 @@
 
 
 def longest_substring_with_k_distinct_characters(s, k):
+    # Time: O(n)    Space: O(1)
     if k == 0:
         return 0
         

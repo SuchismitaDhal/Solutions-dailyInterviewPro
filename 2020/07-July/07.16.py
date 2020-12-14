@@ -13,6 +13,7 @@
 
 class Solution:
     def moveZeros(self, nums):
+        # Time: O(n)    Space: O(1)
         p = 0
         while nums[p]:
             p += 1

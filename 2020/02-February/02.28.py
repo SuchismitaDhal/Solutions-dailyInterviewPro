@@ -23,7 +23,7 @@ class Node(object):
         self.right = None
 
     def __str__(self):
-        # Fill this in.
+        # Time: O(n)    Space: O(n)
         Q = deque()
         sol = ""
         Q.append(self)

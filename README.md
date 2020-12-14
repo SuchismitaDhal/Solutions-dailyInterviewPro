@@ -16,6 +16,7 @@
 | 1 Nov   | initialising 2D array                                                       |
 | 14 Nov  | dict in python; searching key in dict                                       |
 | 23 Dec  | making hashmap using python dict                                            |
+| 2020    |                                                                             |
 | 7 Jan   | reversing list using .reverse()                                             |
 | 9 Jan   | heap in python                                                              |
 | 17 Jan  | reversing string using `[::-1]`; two's complement of a number               |

@@ -14,6 +14,7 @@
 """
 
 def capacity(arr):
+    # Time: O(n)    Space: O(n)
     n = len(arr)
     if n == 0: return 0
     leftHigh = [0 for _ in range(n)]  
