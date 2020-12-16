@@ -14,6 +14,7 @@
 
 
 def fix_brackets(s):
+    #Time: O(n)     Space: O(n)
     stack = list()
     for c in s:
         if len(stack) > 0:
@@ -26,5 +27,5 @@ def fix_brackets(s):
     return len(stack)
 
 
-print fix_brackets('(()()')
+print(fix_brackets('(()()'))
 # 1

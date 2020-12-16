@@ -16,7 +16,8 @@ class Node:
 
 def swap_every_two(llist):
     # Fill this in.
-    return
+    head = ptr = llist
+    return head
 
 
 llist = Node(1, Node(2, Node(3, Node(4, Node(5)))))

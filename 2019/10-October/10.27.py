@@ -30,4 +30,4 @@ node.left.left = Node(4)
 node.left.right = Node(1)
 node.right.right = Node(2)
 
-print minimum_level_sum(node)
+print(minimum_level_sum(node))
