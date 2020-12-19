@@ -16,8 +16,9 @@ class Node:
     self.value = value
 
 def reverse_graph(graph):
-  # Fill this in.
-  
+    # Fill this in.
+    return 
+
 a = Node('a')
 b = Node('b')
 c = Node('c')

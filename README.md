@@ -11,12 +11,13 @@
 | 22 Sept | sorting list in python; Implementing greedy interval scheduling             |
 | 29 Sept | Post-Order traversal of a binary tree; Implementing switch using dictionary |
 | 2 Oct   | sort and for-loop                                                           |
+| 17 Oct  | sort using comparing two elements                                           |
 | 21 Oct  | set in python                                                               |
 | 25 Oct  | kmp algorithm                                                               |
 | 1 Nov   | initialising 2D array                                                       |
 | 14 Nov  | dict in python; searching key in dict                                       |
 | 23 Dec  | making hashmap using python dict                                            |
-| 2020    |                                                                             |
+| 2020    | ----------------------------------------------------------------------------|
 | 7 Jan   | reversing list using .reverse()                                             |
 | 9 Jan   | heap in python                                                              |
 | 17 Jan  | reversing string using `[::-1]`; two's complement of a number               |

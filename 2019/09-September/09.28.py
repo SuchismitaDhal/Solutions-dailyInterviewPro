@@ -1,14 +1,18 @@
 # MICROSOFT
 """
+    SOLVED -- LEETCODE#1344
     Given a time in the format of hour and minute,
     calculate the angle of the hour and minute hand on a clock.
 """
 
 
 def calcAngle(h, m):
+    # Time: O(1)    Space: O(1)
+    if h == 12:
+        h = 0
     am = m * 6          # angle made by minute hand with 0
     ah = h * 30         # angle made by hour hand with 0
-    ad = int(m / 2)  # angle difference in hour hand due to minutes passed
+    ad = m / 2  # angle difference in hour hand due to minutes passed
     ah = ah + ad
     a = abs(am-ah)
 

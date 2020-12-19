@@ -10,28 +10,16 @@
     "for", "daily", "pro", "problems"], k = 2
     Output: ["pro", "daily"]
 """
-
+from collections import defaultdict
 
 class Solution(object):
-    def comp(self, x):
-        return x
-
-    def add(self):
-        return
-
     def topKFrequent(self, words, k):
-        bckt = dict()
+        bckt = defaultdict()
 
         for word in words:
-            if word not in bckt:
-                bckt[word] = 1
-            else:
-                bckt[word] += 1
+            bckt[word] += 1
 
-        print("hash made ")
-        print(bckt)
-        bckt = sorted(bckt, key=self.comp)
-        # bckt = sorted(bckt, key=lambda x: bckt[x])
+        
         return bckt
 
 
