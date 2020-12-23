@@ -3,17 +3,25 @@
     Starting at index 0, for an element n at index i, you are allowed to jump at most n indexes ahead. 
     Given a list of numbers, find the minimum number of jumps to reach the end of the list.
     Example:
-    Input: [3, 2, 5, 1, 1, 9, 3, 4]
-    Output: 2
+        Input: [3, 2, 5, 1, 1, 9, 3, 4]
+        Output: 2
     Explanation:
-    The minimum number of jumps to get to the end of the list is 2:
-    3 -> 5 -> 4
+        The minimum number of jumps to get to the end of the list is 2:
+        3 -> 5 -> 4
 """
 
 
 def jumpToEnd(nums):
-  # Fill this in.
+    # Time: O(n^2)  Space: O(n)
+    jumps = lvl = reach = 0
+    for i in range(len(nums) - 1):
+        reach = max(reach, i + nums[i])
+        if i == lvl:
+            jumps += 1
+            lvl = reach
+
+    return jumps
 
 
-print jumpToEnd([3, 2, 5, 1, 1, 9, 3, 4])
+print(jumpToEnd([3, 2, 5, 1, 1, 9, 3, 4]))
 # 2

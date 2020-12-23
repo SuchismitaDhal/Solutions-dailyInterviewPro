@@ -18,39 +18,35 @@
 from collections import defaultdict
 
 
-def dfs(curr, G, visited, n):
-    till = visited[curr]
-    sol = False
+def dfs(curr, visited, edges):
+    visited.add(curr)
+    pathlen = 1
 
-    if till > n:
-        return False
+    for to in edges:
+        if to not in visited:
+            pathlen = max(pathlen, 1 + dfs(to, visited, edges))
 
-    for rel in G[curr]:
-        if visited[rel] == 1 and till == n:
-            return True
-        visited[rel] = max(visited[rel], till + 1)
-        sol = sol or dfs(rel, G, visited, n)
-
-    return sol
+    return pathlen
 
 
 def chainedWords(words):
-    visited = defaultdict(int)
-    G = defaultdict(list)
+    # Time: O(n^2)  Space: O(n)
+    edges = defaultdict(list)
 
-    n = 0
+    for i in range(len(words)):
+        for j in range(i+1, len(words)):
+            if words[i][-1] == words[j][0]:
+                edges[words[i]].append(words[j])
+            if words[j][-1] == words[i][0]:
+                edges[words[j]].append(words[i])
+    
+    maxpathlen = 0
     for word in words:
-        if word[0] != word[-1]:
-            n += 1
-            G[word[0]].append(word[-1])
-    visited[words[0][0]] = 1
-    print(G)
+        maxpathlen = max(maxpathlen, dfs(word, set(), edges))
 
-    sol = dfs(word[0][0], G, visited, n)
-    print(visited)
-    return sol
+    return maxpathlen == len(words)
 
 
-#print(chainedWords(['apple', 'eggs', 'snack', 'karat', 'tuna']))
+print(chainedWords(['apple', 'eggs', 'snack', 'karat', 'tuna']))
 # True
 print(chainedWords(['ab', 'bc', 'bd', 'da', 'cb']))

@@ -1,5 +1,6 @@
 #FACEBOOK
 """
+    SOLVED -- NO SIMILAR PROBLEM FOUND
     Given a directed graph, reverse the directed graph so all directed edges are reversed.
     Example:
     Input:
@@ -16,8 +17,17 @@ class Node:
     self.value = value
 
 def reverse_graph(graph):
-    # Fill this in.
-    return 
+    # Time: O(n + e)    Space: O(n + e)
+    reverseadj = defaultdict(list)
+
+    for node in graph.values():
+        for adj in node.adjacent:
+            reverseadj[adj].append(node.value)
+
+    for node in graph.values():
+        node.adjacent = reverseadj[node]
+        
+    return graph
 
 a = Node('a')
 b = Node('b')
@@ -35,5 +45,6 @@ graph = {
 for _, val in reverse_graph(graph).items():
   print(val.adjacent)
 # []
-# ['a', 'b']
 # ['a']
+# ['a', 'b']
+# changed to correct output
