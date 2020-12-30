@@ -11,14 +11,31 @@
     Output: ["pro", "daily"]
 """
 from collections import defaultdict
+from heapq import *
+
+class MaxHeapObj(object):
+  def __init__(self, val): self.val = val
+  def __lt__(self, other): return self.val > other.val
+  def __eq__(self, other): return self.val == other.val
+  def __str__(self): return str(self.val)
 
 class Solution(object):
     def topKFrequent(self, words, k):
-        bckt = defaultdict()
+        bckt = defaultdict(int)
 
         for word in words:
             bckt[word] += 1
 
+        minheap = []
+        for word in bckt:
+            if len(minheap) == k:
+                # replace the lowest occurance 
+                # if the occurance is same, replace if smaller string
+                if bckt[word] > 
+                heapreplace(minheap, (bckt[word], word))
+            else:
+                # in the last pop max
+                heappush(minheap, (bckt[word], word))
         
         return bckt
 

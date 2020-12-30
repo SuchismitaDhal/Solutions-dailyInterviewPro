@@ -1,6 +1,6 @@
 # GOOGLE
 """
-    LEETCODE#348
+    SOLVED -- LEETCODE#348
     Design a Tic-Tac-Toe game played between two players on an n x n grid. 
     A move is guaranteed to be valid, and a valid move is one placed on an empty block in the grid. 
     A player who succeeds in placing n of their marks in a horizontal, diagonal, 

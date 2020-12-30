@@ -19,10 +19,24 @@ class Node():
         self.left = left
         self.right = right
 
+from collections import defaultdict
+
+def subtree_sum(root, sums):
+    if not root: return 0
+    S = root.val + subtree_sum(root.left, sums) + subtree_sum(root.right, sums)
+    sums[S] += 1
+    return S
 
 def most_freq_subtree_sum(root):
-    # fill this in.
+    sums = defaultdict(int)
+    subtree_sum(root, sums)
 
+    sol = list(sums.keys())[0]
+    for x in sums:
+        if sums[x] > sums[sol]:
+            sol = x
+
+    return sol
 
 root = Node(3, Node(1), Node(-3))
 print(most_freq_subtree_sum(root))
