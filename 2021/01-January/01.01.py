@@ -9,6 +9,7 @@
 
 move = [[-2, -1], [-1, -2], [1, -2], [2, -1], [2, 1], [1, 2], [-1, 2], [-2, 1]]
 def is_knight_on_board(x, y, k, cache={}):
+    # Time: O(k)    Space: O(1)
     currBoard = [[0 for _ in range(8)] for _ in range(8)]
     nextBoard = [[0 for _ in range(8)] for _ in range(8)]
     currBoard[x][y] = 1
