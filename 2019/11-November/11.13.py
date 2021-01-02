@@ -16,5 +16,5 @@ def sort_partially_sorted(nums, k):
   # Fill this in.
 
 
-print sort_partially_sorted([3, 2, 6, 5, 4], 2)
+print(sort_partially_sorted([3, 2, 6, 5, 4], 2))
 # [2, 3, 4, 5, 6]

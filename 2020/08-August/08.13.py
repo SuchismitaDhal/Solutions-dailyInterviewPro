@@ -1,7 +1,8 @@
 # UBER
 """
     SOLVED 
-    [VERIFIED] -- https://www.geeksforgeeks.org/largest-connected-component-on-a-grid/
+    [VERIFIED]
+        https://www.geeksforgeeks.org/largest-connected-component-on-a-grid/
     Find the maximum number of connected colors in a grid.
     Can you solve this both recursively and iteratively?
 """
