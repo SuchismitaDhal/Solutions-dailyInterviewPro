@@ -18,11 +18,11 @@ def minimum_level_sum(root):
     # Fill this in.
 
 
-    #     10
-    #    /  \
-    #   2    8
-    #  / \    \
-    # 4   1    2
+#     10
+#    /  \
+#   2    8
+#  / \    \
+# 4   1    2
 node = Node(10)
 node.left = Node(2)
 node.right = Node(8)

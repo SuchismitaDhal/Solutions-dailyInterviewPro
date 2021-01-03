@@ -1,5 +1,6 @@
 # UBER
 """
+	SOLVED -- LEETCODE#141
     Given a linked list, determine if the linked list has a cycle in it. 
     For notation purposes, we use an integer pos 
     which represents the zero-indexed position where the tail connects to.
@@ -18,8 +19,14 @@ class ListNode(object):
 
 class Solution(object):
     def hasCycle(self, head):
-        # Fill this in.
-
+        # Time: O(n)    Space: O(1)
+        fast = slow = head
+        while True:
+            slow = slow.next
+            if not fast.next or not fast.next.next:
+                return False
+            fast = fast.next.next
+            if fast == slow: return True
 
 testHead = ListNode(4)
 node1 = ListNode(3)
