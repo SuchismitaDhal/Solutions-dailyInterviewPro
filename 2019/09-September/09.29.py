@@ -1,6 +1,6 @@
 # APPLE
 """
-    SOLVED
+    SOLVED -- GEEKSFORGEEKS-Evaluation of Expression Tree
     You are given a binary tree representation of an arithmetic expression.
     In this tree, each leaf is an integer value, and a non-leaf node is 
     one of the four operations: '+', '-', '*', or '/'.
@@ -37,52 +37,21 @@ def calc(x, y, s):
         "*": x * y,
         "/": x / y
     }
-    return switch.get(s)
+    return switch[s]
 
 
 def evaluate(root):
-    # post-order traversal to get postfix expression
-    # O(n) time, O(n) space
+    # Time: O(n) 	Space: O(h)
+    if root.val not in ['+', '-', '*', '/']:
+    	return root.val
+    return calc(evaluate(root.left), evaluate(root.right), root.val)
 
-    stack = list()
-    order = list()
-    stack.append(root)
-
-    while len(stack):
-        n = stack[len(stack) - 1]
-        if n.left == None:
-            if n.right == None:
-                stack.pop()
-                if type(n.val) == str:
-                    y = order.pop()
-                    x = order.pop()
-                    order.append(calc(x, y, n.val))
-                else:
-                    order.append(n.val)
-            else:
-                stack.append(n.right)
-                n.right = None
-        else:
-            stack.append(n.left)
-            n.left = None
-
-    return order[0]
-
-
-tree = Node(DIVIDE)
-tree.left = Node(TIMES)
-tree.left.left = Node(2)
-tree.left.right = Node(PLUS)
-tree.right = Node(3)
-tree.left.right.left = Node(2)
-tree.left.right.right = Node(1)
-
-# tree = Node(TIMES)
-# tree.left = Node(PLUS)
-# tree.left.left = Node(3)
-# tree.left.right = Node(2)
-# tree.right = Node(PLUS)
-# tree.right.left = Node(4)
-# tree.right.right = Node(5)
+tree = Node(TIMES)
+tree.left = Node(PLUS)
+tree.left.left = Node(3)
+tree.left.right = Node(2)
+tree.right = Node(PLUS)
+tree.right.left = Node(4)
+tree.right.right = Node(5)
 print(evaluate(tree))
 # 45

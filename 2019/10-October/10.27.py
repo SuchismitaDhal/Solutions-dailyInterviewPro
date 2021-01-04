@@ -13,7 +13,6 @@ class Node:
         self.left = left
         self.right = right
 
-
 def minimum_level_sum(root):
     # Fill this in.
 
