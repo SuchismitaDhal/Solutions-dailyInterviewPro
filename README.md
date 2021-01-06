@@ -14,7 +14,7 @@
 | 17 Oct  | sort using comparing two elements                                           |
 | 21 Oct  | set in python                                                               |
 | 25 Oct  | kmp algorithm                                                               |
-| 31 Oct  | custom heap element                                                                |
+| 31 Oct  | custom heap element                                                         |
 | 1 Nov   | initialising 2D array                                                       |
 | 14 Nov  | dict in python; searching key in dict                                       |
 | 23 Dec  | making hashmap using python dict                                            |
