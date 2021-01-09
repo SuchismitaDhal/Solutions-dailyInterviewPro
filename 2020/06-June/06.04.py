@@ -15,8 +15,14 @@ class Node:
 
 
 def swap_every_two(llist):
-    # Fill this in.
+    # Time: O(n)    Space: O(1)
+    if not llist or not llist.next:
+        return llist
     head = ptr = llist
+    head = head.next
+    while ptr and ptr.next:
+        
+
     return head
 
 
