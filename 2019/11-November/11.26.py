@@ -1,5 +1,6 @@
 # LINKEDIN
 """
+	SOLVED -- LEETCODE#223
     Given two rectangles, find the area of intersection.
 """
 
@@ -13,7 +14,13 @@ class Rectangle():
 
 
 def intersection_area(rect1, rect2):
-    # Fill this in.
+    # Time:  O(1) 	Space: O(1)
+    min_x = max(rect1.min_x, rect2.min_x)
+    max_x = min(rect1.max_x, rect2.max_x)
+    min_y = max(rect1.min_y, rect2.min_y)
+    max_y = min(rect1.max_y, rect2.max_y)
+
+    return (max_x - min_x) * (max_y - min_y) 
 
 
 rect1 = Rectangle(0, 0, 3, 2)

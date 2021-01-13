@@ -14,7 +14,7 @@ class Node:
     self.next = next
 
 def removeConsecutiveSumTo0(node):
-    seensum = defaultdict(list)
+    seensum = dict()
     head = Node(0, node)
 
     presum = 0
@@ -23,6 +23,12 @@ def removeConsecutiveSumTo0(node):
 
     while itr:
         presum += itr.value
+        if presum in seensum:
+        	seensum
+
+
+
+
         seensum[presum].append(itr)
         itr = itr.next
 
@@ -41,6 +47,6 @@ node.next.next.next.next.next = Node(4)
 node.next.next.next.next.next.next = Node(-4)
 node = removeConsecutiveSumTo0(node)
 while node:
-  print(node.value)
-  node = node.next
+	print(node.value)
+	node = node.next
 # 10

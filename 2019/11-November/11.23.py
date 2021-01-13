@@ -12,7 +12,7 @@
 
    Output: [1, 3, 2, 4, 5, 6, 7]
 """
-
+from collections import deque
 
 class Node:
     def __init__(self, value, left=None, right=None):
@@ -23,6 +23,8 @@ class Node:
 
 def zigzag_order(tree):
     # Fill this in.
+    if not tree: return []
+    Q = deque()
 
 
 n4 = Node(4)
