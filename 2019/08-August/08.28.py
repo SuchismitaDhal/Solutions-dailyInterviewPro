@@ -8,7 +8,13 @@
 """
 
 def maximum_product_of_three(lst):
-  # Fill this in.
+	negthree = [0, 0, 0]
+	posthree = [-1, -1, -1]
+
+	for x in lst:
+		if x >= 0: updatepos(posthree, x)
+		else:        upda 
+
 
 print maximum_product_of_three([-4, -4, 2, 8])
 # 128

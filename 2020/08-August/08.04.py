@@ -1,5 +1,4 @@
-#TWITTER
-
+# TWITTER
 """
 	Given an array containing only positive integers, 
 	return if you can pick two integers from the array which cuts the array 

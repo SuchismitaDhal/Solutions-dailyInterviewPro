@@ -1,5 +1,6 @@
 # APPLE
 """
+	SOLVED -- LEETCODE#232
     Implement a queue class using two stacks. 
     A queue is a data structure that supports the FIFO protocol (First in = first out). 
     Your class should support the enqueue and dequeue methods like a standard queue.
@@ -8,13 +9,27 @@
 
 class Queue:
     def __init__(self):
+    	self.stack = []
 
     def enqueue(self, val):
-      # Fill this in.
+    	# Time: O(n) 	Space: O(n)
+    	temp = []
+    	while self.stack:
+    		x = self.stack[-1]
+    		self.stack.pop()
+    		temp.append(x)
+
+    	self.stack.append(val)
+    	while temp:
+    		x = temp[-1]
+    		temp.pop()
+    		self.stack.append(x)
 
     def dequeue(self):
-      # Fill this in.
-
+    	# Time: O(1) 	Space: O(1)
+    	x = self.stack[-1]
+    	self.stack.pop()
+    	return x
 
 q = Queue()
 q.enqueue(1)
