@@ -1,5 +1,6 @@
 # APPLE
 """
+	SOLVED -- LEETCODE#103
     Given a binary tree, return the list of node values 
     in zigzag order traversal. Here's an example
 
@@ -15,17 +16,42 @@
 from collections import deque
 
 class Node:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
+	def __init__(self, value, left=None, right=None):
+		self.value = value
+		self.left = left
+		self.right = right
 
 
 def zigzag_order(tree):
-    # Fill this in.
+    # Time: O(n) 	Space: O(n)
     if not tree: return []
     Q = deque()
 
+    sol = []
+    currlvl = []
+    lvl = 0
+
+    Q.append(tree)
+    Q.append('.')
+    while len(Q) > 1:
+    	ele = Q.popleft()
+    	if ele == '.':
+    		if lvl % 2:
+    			currlvl.reverse()
+    		sol.extend(currlvl)
+    		currlvl = []
+    		lvl += 1
+    		Q.append('.')
+    	else:
+    		currlvl.append(ele.value)
+    		if ele.left: Q.append(ele.left)
+    		if ele.right: Q.append(ele.right)
+
+    if lvl % 2:
+    	currlvl.reverse()
+    sol.extend(currlvl)
+
+    return sol
 
 n4 = Node(4)
 n5 = Node(5)
