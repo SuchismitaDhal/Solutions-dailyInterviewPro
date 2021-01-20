@@ -1,6 +1,6 @@
 # GOOGLE
 """
-	SOLVED -- [SIMILAR] TECHIE DELIGHT - Find maximum sum root to leaf path in a binary tree
+	SOLVED -- [SIMILAR] TECHIE DELIGHT | Find maximum sum root to leaf path in a binary tree
 	Given a binary tree, find and return the largest path from root to leaf.
 """
 class Node:
